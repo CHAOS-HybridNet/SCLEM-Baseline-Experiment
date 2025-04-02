@@ -1,0 +1,40 @@
+{
+  "results_dir": ".\\",
+  "p_value": 0.01,
+  "resample_threshold": 1,
+  "small_bin_percent_threshold": 1.0,
+  "num_bins_categorical": 10,
+  "num_bins_numerical": 10,
+  "caliper_coefficient": 0.1,
+  "apply_feature_target_metric_dependence_test": true,
+  "decomposition_type": "univar",
+  "normalization_type": "rf",
+  "sort_type": "hazard_score",
+  "add_null": true,
+  "metric_col": "target_metric",
+  "invariant_columns": [
+    "@[DumpDayBillsV2] <*> failed, <*> <*> no such file or directory, <*> <*> <*>",
+    "unknown",
+    "1-avg(irate(node_cpu_seconds_total{hostname=~bj1-rd-geass-prod-04, mode=~idle}[2m])) by (mode, hostname)",
+    "node_load1{hostname=~bj1-rd-geass-prod-04}",
+    "node_load5{hostname=~bj1-rd-geass-prod-04}",
+    "node_load15{hostname=~bj1-rd-geass-prod-04}",
+    "(1-(node_memory_MemAvailable_bytes{hostname=~bj1-rd-geass-prod-04}/node_memory_MemTotal_bytes{hostname=~bj1-rd-geass-prod-04}))*100",
+    "1-(node_filesystem_free_bytes{hostname=~bj1-rd-geass-prod-04,fstype=~ext4|xfs,mountpoint=/} / node_filesystem_size_bytes{hostname=~bj1-rd-geass-prod-04,fstype=~ext4|xfs,mountpoint=/})",
+    "1-(node_filesystem_free_bytes{hostname=~bj1-rd-geass-prod-04,fstype=~ext4|xfs,mountpoint=/data} / node_filesystem_size_bytes{hostname=~bj1-rd-geass-prod-04,fstype=~ext4|xfs,mountpoint=/data})",
+    "irate(node_disk_reads_completed_total{hostname=~bj1-rd-geass-prod-04}[2m])",
+    "irate(node_disk_writes_completed_total{hostname=~bj1-rd-geass-prod-04}[2m])",
+    "irate(node_disk_read_time_seconds_total{hostname=~bj1-rd-geass-prod-04}[2m])",
+    "irate(node_disk_write_time_seconds_total{hostname=~bj1-rd-geass-prod-04}[2m])",
+    "irate(node_disk_read_bytes_total{hostname=~bj1-rd-geass-prod-04}[2m])",
+    "irate(node_disk_written_bytes_total{hostname=~bj1-rd-geass-prod-04}[2m])",
+    "node_netstat_Tcp_CurrEstab{hostname=~bj1-rd-geass-prod-04}",
+    "node_sockstat_TCP_tw{hostname=~bj1-rd-geass-prod-04}",
+    "irate(node_netstat_Tcp_ActiveOpens{hostname=~bj1-rd-geass-prod-04}[2m])",
+    "irate(node_netstat_Tcp_PassiveOpens{hostname=~bj1-rd-geass-prod-04}[2m])",
+    "node_sockstat_TCP_alloc{hostname=~bj1-rd-geass-prod-04}"
+
+
+  ],
+  "feature_columns": []
+}

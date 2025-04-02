@@ -1,0 +1,1341 @@
+network:
+  - index: 0
+    experiment: network-wrong-ip-address.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 0
+          action: "Wrong IP Address"
+
+  - index: 1
+    experiment: network-configuration-errors.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 1
+          action: "Configuration Errors"
+
+  - index: 2
+    experiment: network-defective-software-changes.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 2
+          action: "Defective Software Changes"
+
+  - index: 3
+    experiment: network-wrong-ip-address-2.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 3
+          action: "Wrong IP Address"
+
+  - index: 4
+    experiment: network-configuration-errors-2.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 4
+          action: "Configuration Errors"
+
+  - index: 5
+    experiment: network-defective-software-changes-2.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 5
+          action: "Defective Software Changes"
+
+  - index: 6
+    experiment: network-resource-contention.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 6
+          action: "Resource Contention"
+
+  - index: 7
+    experiment: network-defective-software-changes-3.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 7
+          action: "Defective Software Changes"
+
+  - index: 8
+    experiment: network-expected-software-changes.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 8
+          action: "Expected Software Changes"
+
+pod:
+  - index: 0
+    experiment: pod-kill-serial.yaml
+    instance_related: False
+    order: True
+    anomalies:
+      metrics:
+        network:
+        - index: 0
+          action: dips
+          order: 0
+        - index: 1
+          action: dips
+          order: 0
+        - index: 2
+          action: dips
+          order: 0
+        - index: 3
+          action: dips
+          order: 0
+        - index: 7
+          action: dips
+          order: 0
+
+        memory:
+        - index: 0
+          action: spikes
+          order: 2
+        - index: 1
+          action: spikes
+          order: 2
+        - index: 2
+          action: spikes
+          order: 2
+        - index: 3
+          action: spikes
+          order: 2
+        - index: 5
+          action: spikes
+          order: 2
+        - index: 6
+          action: spikes
+          order: 2
+        - index: 7
+          action: spikes
+          order: 2
+        - index: 8
+          action: spikes
+          order: 2
+        container:
+        - index: 0
+          action: spikes
+          order: 1
+        cpu:
+        - index: 0
+          action: spikes
+          order: 2
+        - index: 1
+          action: spikes
+          order: 2
+        - index: 2
+          action: spikes
+          order: 2
+      cmds:
+        config:
+        - index: 2
+          action: anomaly
+
+  - index: 1
+    experiment: pod-failure-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 2
+          action: dips
+        - index: 3
+          action: dips
+        memory:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 3
+          action: dips
+        - index: 4
+          action: dips
+        cpu:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 3
+          action: dips
+        - index: 4
+          action: dips
+      logs:
+        pod:
+        - index: 1
+          action: match
+
+  - index: 2
+    experiment: container-kill-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        container:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: dips
+
+stress:
+  - index: 0
+    experiment: stress-cpu-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        cpu:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        memory:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: dips
+      traces:
+        onehop:
+        - index: 0
+          action: all
+        - index: 1
+          action: all
+
+  - index: 1
+    experiment: stress-memory-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        cpu:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        memory:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: dips
+        - index: 5
+          action: spikes
+        - index: 6
+          action: spikes
+        - index: 7
+          action: spikes
+        - index: 8
+          action: spikes
+      traces:
+        onehop:
+        - index: 0
+          action: all
+        - index: 1
+          action: all
+
+jvm:
+  - index: 0
+    experiment: jvm-gc-serial.yaml
+    instance_related: True
+    anomalies:
+      metrics:
+        jvm:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: spikes
+        - index: 7
+          action: spikes
+
+  - index: 2
+    experiment: jvm-stress-memory-heap-serial.yaml
+    instance_related: True
+    anomalies:
+      metrics:
+        memory:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: dips
+        cpu:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        jvm:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 5
+          action: spikes
+      traces:
+        onehop:
+        - index: 0
+          action: all
+        - index: 1
+          action: all
+
+  - index: 3
+    experiment: jvm-stress-memory-stack-serial.yaml
+    instance_related: True
+    anomalies:
+      metrics:
+        memory:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: dips
+        - index: 5
+          action: spikes
+        cpu:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        jvm:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 6
+          action: spikes
+      traces:
+        onehop:
+        - index: 0
+          action: all
+        - index: 1
+          action: all
+
+io:
+  - index: 0
+    experiment: io-attr-serial.yaml
+    instance_related: False
+    order: True
+    anomalies:
+      metrics:
+        io:
+        - index: 0
+          action: dips
+          order: 0
+        - index: 1
+          action: dips
+          order: 0
+        - index: 2
+          action: dips
+          order: 0
+        cpu:
+        - index: 0
+          action: dips
+          order: 1
+        - index: 1
+          action: dips
+          order: 1
+        - index: 2
+          action: dips
+          order: 1
+        memory:
+        - index: 0
+          action: dips
+          order: 2
+        - index: 1
+          action: dips
+          order: 2
+      cmds:
+        exec:
+        - index: 4
+          action: anomaly
+
+  - index: 1
+    experiment: io-fault-serial.yaml
+    instance_related: False
+    anomalies:
+      logs:
+        pod:
+        - index: 5
+          action: match
+
+  - index: 2
+    experiment: io-latency-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        io:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 2
+          action: dips
+        - index: 5
+          action: dips
+        - index: 6
+          action: dips
+
+  - index: 3
+    experiment: io-burn-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        io:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 5
+          action: spikes
+        - index: 6
+          action: spikes
+
+  - index: 4
+    experiment: io-fill-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        io:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 3
+          action: spikes
+        - index: 6
+          action: spikes
+
+# time:
+#   - index: 0
+#     experiment: time-serial.yaml
+#     instance_related: True
+#     anomalies:
+#       metrics:
+#         time:
+#         - index: 0
+#           action: spikes
+
+config:
+  - index: 0
+    experiment: config-cpu-limit-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 3
+          action: anomaly
+        - index: 5
+          action: anomaly
+
+  - index: 1
+    experiment: config-memory-limit-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 4
+          action: anomaly
+        - index: 6
+          action: anomaly
+
+  - index: 2
+    experiment: config-cpu-request-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 3
+          action: anomaly
+        - index: 5
+          action: anomaly
+
+  - index: 3
+    experiment: config-memory-request-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 4
+          action: anomaly
+        - index: 6
+          action: anomaly
+
+  - index: 4
+    experiment: config-agent-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 7
+          action: anomaly
+
+  - index: 5
+    experiment: config-mount-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 8
+          action: anomaly
+
+  - index: 6
+    experiment: config-label-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 9
+          action: anomaly
+
+  - index: 7
+    experiment: config-annotation-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 10
+          action: anomaly
+
+  - index: 8
+    experiment: config-image-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 11
+          action: anomaly
+
+  - index: 9
+    experiment: config-port-serial.yaml
+    instance_related: True
+    anomalies:
+      cmds:
+        config:
+        - index: 12
+          action: anomaly
+
+anomalies:
+  - id: "10033"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10034"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10035"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10036"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10037"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10038"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10039"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10040"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10057"
+    ground_truth: "Resource Contention-Defective Software Changes"
+    gemma2: "Resource Contention-Defective Software Changes"
+    metrics:
+      - index: 6
+        action: "Resource Contention"
+      - index: 7
+        action: "Defective Software Changes"
+
+  - id: "10060"
+    ground_truth: "Resource Contention-Defective Software Changes"
+    gemma2: "Resource Contention-Defective Software Changes"
+    metrics:
+      - index: 6
+        action: "Resource Contention"
+      - index: 7
+        action: "Defective Software Changes"
+
+  - id: "10062"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10063"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10064"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10065"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10066"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10067"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10068"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10076"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10077"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10079"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10080"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10081"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "10082"
+    ground_truth: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    gemma2: "Wrong IP Address-Configuration Errors-Defective Software Changes"
+    metrics:
+      - index: 0
+        action: "Wrong IP Address"
+      - index: 1
+        action: "Configuration Errors"
+      - index: 2
+        action: "Defective Software Changes"
+
+  - id: "25267"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "25425"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "25494"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "25917"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "25969"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "26475"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "26681"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "26868"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "27171"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "29811"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "29836"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "29867"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "30659"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "30705"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+  - id: "33620"
+    ground_truth: "Expected Software Changes"
+    gemma2: "Expected Software Changes"
+    metrics:
+      - index: 8
+        action: "Expected Software Changes"
+
+pod:
+  - index: 0
+    experiment: pod-kill-serial.yaml
+    instance_related: False
+    order: True
+    anomalies:
+      metrics:
+        network:
+        - index: 0
+          action: dips
+          order: 0
+        - index: 1
+          action: dips
+          order: 0
+        - index: 2
+          action: dips
+          order: 0
+        - index: 3
+          action: dips
+          order: 0
+        - index: 7
+          action: dips
+          order: 0
+
+        memory:
+        - index: 0
+          action: spikes
+          order: 2
+        - index: 1
+          action: spikes
+          order: 2
+        - index: 2
+          action: spikes
+          order: 2
+        - index: 3
+          action: spikes
+          order: 2
+        - index: 5
+          action: spikes
+          order: 2
+        - index: 6
+          action: spikes
+          order: 2
+        - index: 7
+          action: spikes
+          order: 2
+        - index: 8
+          action: spikes
+          order: 2
+        container:
+        - index: 0
+          action: spikes
+          order: 1
+        cpu:
+        - index: 0
+          action: spikes
+          order: 2
+        - index: 1
+          action: spikes
+          order: 2
+        - index: 2
+          action: spikes
+          order: 2
+      cmds:
+        config:
+        - index: 2
+          action: anomaly
+
+  - index: 1
+    experiment: pod-failure-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        network:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 2
+          action: dips
+        - index: 3
+          action: dips
+        memory:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 3
+          action: dips
+        - index: 4
+          action: dips
+        cpu:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 3
+          action: dips
+        - index: 4
+          action: dips
+      logs:
+        pod:
+        - index: 1
+          action: match
+
+  - index: 2
+    experiment: container-kill-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        container:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: dips
+
+stress:
+  - index: 0
+    experiment: stress-cpu-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        cpu:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        memory:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: dips
+      traces:
+        onehop:
+        - index: 0
+          action: all
+        - index: 1
+          action: all
+
+  - index: 1
+    experiment: stress-memory-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        cpu:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        memory:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: dips
+        - index: 5
+          action: spikes
+        - index: 6
+          action: spikes
+        - index: 7
+          action: spikes
+        - index: 8
+          action: spikes
+      traces:
+        onehop:
+        - index: 0
+          action: all
+        - index: 1
+          action: all
+
+jvm:
+  - index: 0
+    experiment: jvm-gc-serial.yaml
+    instance_related: True
+    anomalies:
+      metrics:
+        jvm:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: spikes
+        - index: 7
+          action: spikes
+
+  - index: 2
+    experiment: jvm-stress-memory-heap-serial.yaml
+    instance_related: True
+    anomalies:
+      metrics:
+        memory:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: dips
+        cpu:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        jvm:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 5
+          action: spikes
+      traces:
+        onehop:
+        - index: 0
+          action: all
+        - index: 1
+          action: all
+
+  - index: 3
+    experiment: jvm-stress-memory-stack-serial.yaml
+    instance_related: True
+    anomalies:
+      metrics:
+        memory:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 3
+          action: dips
+        - index: 5
+          action: spikes
+        cpu:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        jvm:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 6
+          action: spikes
+      traces:
+        onehop:
+        - index: 0
+          action: all
+        - index: 1
+          action: all
+
+io:
+  - index: 0
+    experiment: io-attr-serial.yaml
+    instance_related: False
+    order: True
+    anomalies:
+      metrics:
+        io:
+        - index: 0
+          action: dips
+          order: 0
+        - index: 1
+          action: dips
+          order: 0
+        - index: 2
+          action: dips
+          order: 0
+        cpu:
+        - index: 0
+          action: dips
+          order: 1
+        - index: 1
+          action: dips
+          order: 1
+        - index: 2
+          action: dips
+          order: 1
+        memory:
+        - index: 0
+          action: dips
+          order: 2
+        - index: 1
+          action: dips
+          order: 2
+      cmds:
+        exec:
+        - index: 4
+          action: anomaly
+
+  - index: 1
+    experiment: io-fault-serial.yaml
+    instance_related: False
+    anomalies:
+      logs:
+        pod:
+        - index: 5
+          action: match
+
+  - index: 2
+    experiment: io-latency-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        io:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 2
+          action: dips
+        - index: 5
+          action: dips
+        - index: 6
+          action: dips
+
+  - index: 3
+    experiment: io-burn-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        io:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 2
+          action: spikes
+        - index: 5
+          action: spikes
+        - index: 6
+          action: spikes
+
+  - index: 4
+    experiment: io-fill-serial.yaml
+    instance_related: False
+    anomalies:
+      metrics:
+        io:
+        - index: 0
+          action: spikes
+        - index: 1
+          action: spikes
+        - index: 3
+          action: spikes
+        - index: 6
+          action: spikes
+
+dns:
+  - index: 0
+    experiment: dns-error-serial.yaml
+    instance_related: True
+    anomalies:
+      metrics:
+        network:
+        - index: 0
+          action: dips
+        - index: 1
+          action: dips
+        - index: 2
+          action: dips
+        icmp:
+        - index: 2
+          action: spikes
+        - index: 3
+          action: spikes
+  - index: 1
+    experiment: dns-random-serial.yaml
+    instance_related: True
+    anomalies:
+      metrics:
+        icmp:
+        - index: 1
+          action: dips
+        - index: 2
+          action: spikes
+        - index: 3
+          action: spikes
+http:
+  - index: 0
+    experiment: http-patch-body-serial.yaml
+    instance_related: True
+    anomalies:
+      logs:
+        pod:
+        - index: 2
+          action: match
+  - index: 1
+    experiment: http-patch-head-serial.yaml
+    instance_related: True
+    anomalies:
+      logs:
+        pod:
+        - index: 3
+          action: match
+  - index: 2
+    experiment: http-abort-serial.yaml
+    instance_related: True
+    anomalies:
+      logs:
+        pod:
+        - index: 4
+          action: match

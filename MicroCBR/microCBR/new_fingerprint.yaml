@@ -1,0 +1,21 @@
+anomalies:
+  metrics:
+    network:
+    - action: Wrong IP Address
+      index: 0
+    - action: Configuration Errors
+      index: 1
+    - action: Defective Software Changes
+      index: 2
+    - action: Wrong IP Address
+      index: 3
+    - action: Configuration Errors
+      index: 4
+    - action: Defective Software Changes
+      index: 5
+    - action: Resource Contention
+      index: 6
+    - action: Defective Software Changes
+      index: 7
+    - action: Expected Software Changes
+      index: 8

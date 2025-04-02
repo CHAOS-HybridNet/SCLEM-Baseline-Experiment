@@ -1,0 +1,9 @@
+__pycache__
+/fastsst.egg-info/
+/build/
+/dist/
+*.pptx
+register.py
+.ipynb_checkpoints
+.pypirc
+/all_data/

@@ -1,0 +1,33 @@
+{
+  "results_dir": ".\\",
+  "p_value": 0.01,
+  "resample_threshold": 1,
+  "small_bin_percent_threshold": 1.0,
+  "num_bins_categorical": 10,
+  "num_bins_numerical": 10,
+  "caliper_coefficient": 0.1,
+  "apply_feature_target_metric_dependence_test": true,
+  "decomposition_type": "univar",
+  "normalization_type": "rf",
+  "sort_type": "hazard_score",
+  "add_null": true,
+  "metric_col": "target_metric",
+  "invariant_columns": [
+    "request",
+    "response",
+    "infra.grpc.handler",
+    "QueryCard",
+    "verifyCard: match cardNo local, <:cardNo:> <:transactionID:> <:spanID:>",
+    "CardQuery <:*:> channel, <:cardNo:> <:transactionID:> <:spanID:>",
+    "call by <:*:> fn:QueryCard call cost:<:NUM:> <:traceID:> <:transactionID:> <:spanID:>",
+    "CardQuery <:*:> <:<:resp:>",
+    "verifyCardLocal: s.dao.GetCard failed, err=sql: no rows in result set <:traceID:> <:transactionID:> <:spanID:>",
+    "verifyCard: match cardNo by channel, <:cardNo:> valid=<:STATUS:>, <:cardBin:>",
+    "verifyCard: <:cardNo:> Yrouter:<:STATUS:> <:traceID:> <:transactionID:> <:spanID:>",
+    "verifyCard: <:cardNo:> <:<:resp:>",
+    "need retry pre call <:*:> err:card is invalid <:traceID:> <:transactionID:> <:spanID:>",
+    "sendPostRequest huaDao <:<:resp:>",
+    "s.MatchByNameAndNo failed, errCode=<:NUM:>, <:cardNo:> <:*:> <:traceID:> <:transactionID:> <:spanID:>"
+  ],
+  "feature_columns": []
+}

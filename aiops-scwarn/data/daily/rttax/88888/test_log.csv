@@ -1,0 +1,25 @@
+calcRegularTaxDc decimal calc err,[Freeze] <:ChineseInfo:> taxBill=&{OutOrderID:<:SEQ:> OperationID:<:SEQ:> <:*:> <:*:> PayChannel: WxOpenID: AliUserID: BankCardNo: ExternalUserID: IDCardType:<:NUM:> TaxYear:<:NUM:> TaxSeason:<:NUM:>-Q4 TaxMonth:<:NUM:>-<:NUM:> TaxDate:<:NUM:>-<:NUM:>-<:NUM:> PreTaxAmount:<:NUM:> PostTaxAmount:<:NUM:> TaxAmount:<:NUM:> PreTaxAmountRefund:<:NUM:> PostTaxAmountRefund:<:NUM:> TaxAmountRefund:<:NUM:> TaxType:<:NUM:> TaxSummaryType:<:NUM:> BillType:<:NUM:> CurMonthPreTaxAmount:<:NUM:> CurMonthPostTaxAmount:<:NUM:> CurMonthPaidInTaxAmount:<:NUM:> CurMonthTaxableIncome:<:NUM:> CurYearPreTaxAmount:<:NUM:> CurYearPostTaxAmount:<:NUM:> CurYearPayableTaxAmount:<:NUM:> CurYearPaidInTaxAmount:<:NUM:> CurYearTaxableIncome:<:NUM:> PostTaxAmountDiff:<:NUM:> <:*:> DealerID:<:NUM:> TransBatchID: DetailID: IssueID: SummaryFinishedTime:<:NUM:>-<:NUM:>-<:NUM:> <:NUM:>:<:NUM:>:<:NUM:> <:NUM:> UTC IfTransfer:false DataType:<:NUM:> VirtualUserID:<:NUM:> IfRegular:<:NUM:> RegYearPreTaxAmount:<:NUM:> RegYearPostTaxAmount:<:NUM:> RegYearPaidInTaxAmount:<:NUM:> FreezeUserType:<:NUM:> IfTest:<:NUM:> <:*:> <:*:> <:*:> TaxpayerType:<:NUM:> TaxpayerTaxMode:<:NUM:> TaxpayerUpgradeStatus:<:NUM:> <:*:> IfCombatPartner:<:NUM:> IfRefresh:false <:*:> TaxRate:<:NUM:> TaxMode: MonthTaxReduction:<:NUM:> YearTaxReduction:<:NUM:> BrokerType:<:NUM:> IfNotCheckTaxpayer:false <:*:> BizMode:<:NUM:> VatRate:<:NUM:> VatRateSource: IfPreCheckByteV1:false IfFreezeBillTiDB:false} freezeResp={ErrCode:<:NUM:> LeftQuota:<:NUM:> DateLeftQuota:<:NUM:> DateTotalQuota:<:NUM:> MonthLeftQuota:<:NUM:> MonthTotalQuota:<:NUM:> QuarterLeftQuota:<:NUM:> QuarterTotalQuota:<:NUM:> YearLeftQuota:<:NUM:> YearTotalQuota:<:NUM:> YearExtraQuota:<:NUM:> MaxDateAmount:<:NUM:> MaxMonthAmount:<:NUM:> MaxPlatMonthAmount:<:NUM:> MaxQuarterAmount:<:NUM:> MaxYearAmount:<:NUM:> IfExpand:false PreTaxAmount:<:NUM:> PostTaxAmount:<:NUM:> PersonalTax:<:NUM:> ValueAddedTax:<:NUM:> ExcludingVatAmount:<:NUM:> AdditionalTax:<:NUM:> UrbanTax:<:NUM:> TuitionTax:<:NUM:> LocalTuitionTax:<:NUM:> VatRate:<:NUM:> UrbanRate:<:NUM:> TuitionRate:<:NUM:> LocalTuitionRate:<:NUM:> PersonalRate:<:NUM:> IfCalcV1:false MakeUpTax:<:NUM:>} [<:traceID:> <:transactionID:> span.id=],[CheckUserLimit] <:*:> <:ChineseInfo:> <:*:> <:*:> <:*:> <:*:> <:*:> <:*:> PayChannel: WxOpenID: AliUserID: BankCardNo: ExternalUserID: IDCardType:<:NUM:> TaxYear:<:NUM:> TaxSeason:<:NUM:>-Q4 TaxMonth:<:NUM:>-<:NUM:> TaxDate:<:NUM:>-<:NUM:>-<:NUM:> PreTaxAmount:<:NUM:> PostTaxAmount:<:NUM:> TaxAmount:<:NUM:> PreTaxAmountRefund:<:NUM:> PostTaxAmountRefund:<:NUM:> TaxAmountRefund:<:NUM:> TaxType:<:NUM:> TaxSummaryType:<:NUM:> BillType:<:NUM:> CurMonthPreTaxAmount:<:NUM:> CurMonthPostTaxAmount:<:NUM:> CurMonthPaidInTaxAmount:<:NUM:> CurMonthTaxableIncome:<:NUM:> CurYearPreTaxAmount:<:NUM:> CurYearPostTaxAmount:<:NUM:> CurYearPayableTaxAmount:<:NUM:> CurYearPaidInTaxAmount:<:NUM:> CurYearTaxableIncome:<:NUM:> PostTaxAmountDiff:<:NUM:> <:*:> DealerID:<:NUM:> TransBatchID: DetailID: IssueID: SummaryFinishedTime:<:NUM:>-<:NUM:>-<:NUM:> <:NUM:>:<:NUM:>:<:NUM:> <:NUM:> UTC IfTransfer:false DataType:<:NUM:> VirtualUserID:<:NUM:> IfRegular:<:NUM:> RegYearPreTaxAmount:<:NUM:> RegYearPostTaxAmount:<:NUM:> RegYearPaidInTaxAmount:<:NUM:> FreezeUserType:<:NUM:> IfTest:<:NUM:> <:*:> <:*:> <:*:> TaxpayerType:<:NUM:> TaxpayerTaxMode:<:NUM:> TaxpayerUpgradeStatus:<:NUM:> IfTransV3:false IfCombatPartner:<:NUM:> IfRefresh:false <:*:> TaxRate:<:NUM:> TaxMode: MonthTaxReduction:<:NUM:> YearTaxReduction:<:NUM:> BrokerType:<:NUM:> <:*:> <:*:> BizMode:<:NUM:> VatRate:<:NUM:> VatRateSource: <:*:> IfFreezeBillTiDB:false} [<:traceID:> <:transactionID:> span.id=],<:ChineseInfo:>,timestamp,unknown
+0,0,0,0,2023-10-12 10:20:00,63
+0,0,0,0,2023-10-12 10:22:00,0
+0,0,5,10,2023-10-12 10:24:00,15
+0,0,5,15,2023-10-12 10:26:00,20
+0,155,0,155,2023-10-12 10:28:00,10
+0,0,10,20,2023-10-12 10:30:00,40
+0,0,10,20,2023-10-12 10:32:00,45
+0,5,10,25,2023-10-12 10:34:00,125
+0,10,0,10,2023-10-12 10:36:00,130
+0,0,10,20,2023-10-12 10:38:00,30
+0,35,10,65,2023-10-12 10:40:00,30
+0,10,0,10,2023-10-12 10:42:00,15
+0,30,10,50,2023-10-12 10:44:00,20
+0,20,10,40,2023-10-12 10:46:00,15
+0,0,0,5,2023-10-12 10:48:00,10
+0,0,0,0,2023-10-12 10:50:00,0
+0,0,0,0,2023-10-12 10:52:00,15
+0,10,0,10,2023-10-12 10:54:00,0
+0,15,0,15,2023-10-12 10:56:00,0
+0,10,10,30,2023-10-12 10:58:00,30
+0,180,0,180,2023-10-12 11:00:00,15
+0,0,0,0,2023-10-12 11:02:00,0
+0,0,0,0,2023-10-12 11:04:00,0
+0,0,0,0,2023-10-12 11:06:00,25
